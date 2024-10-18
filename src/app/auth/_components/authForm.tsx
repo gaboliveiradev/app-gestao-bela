@@ -5,12 +5,26 @@ import { Card, CardHeader, CardContent, CardTitle, CardDescription, CardFooter }
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@radix-ui/react-separator";
-import { useForm }  from "react-hook-form";
+import { useForm } from "react-hook-form";
+import { signIn } from "next-auth/react";
+import { toast } from "@/hooks/use-toast";
 
 export function AuthForm() {
    const form = useForm();
-   const handleSubmit = form.handleSubmit((data) => {
-      console.log(data);
+   const handleSubmit = form.handleSubmit(async (data) => {
+      try {
+         await signIn('email', { email: data.email, redirect: false, });
+         
+         toast({
+            title: 'Sucesso !',
+            description: 'E-mail enviado, verifique sua caixa de mensagens.',
+         });
+      } catch (error) {
+         toast({
+            title: 'Erro',
+            description: 'Não foi possível completar a ação.',
+         });
+      }
    })
 
    return (
