@@ -14,7 +14,7 @@ export function AuthForm() {
    const form = useForm();
    const handleSubmit = form.handleSubmit(async (data) => {
       try {
-         await signIn('email', { email: data.email, redirect: false, });
+         await signIn('nodemailer', { email: data.email, redirect: false, });
          
          toast({
             title: 'Sucesso !',
