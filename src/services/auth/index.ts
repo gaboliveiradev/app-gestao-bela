@@ -21,6 +21,6 @@ export const {
         signOut: '/auth', /** Quando o usuário fizer Logout */
         error: '/auth',    /** Se der erro para onde será redirecionado */
         verifyRequest: '/auth',  /** Quando ele envia pro MagicLink para onde irá nos redirecionar */
-        newUser: '/dashboard' /** Quando um novo usuário for criado para onde irá redirecioanr */
+        newUser: '/app' /** Quando um novo usuário for criado para onde irá redirecioanr */
     }
 })

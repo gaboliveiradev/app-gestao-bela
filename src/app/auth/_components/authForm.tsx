@@ -8,6 +8,7 @@ import { Separator } from "@radix-ui/react-separator";
 import { useForm } from "react-hook-form";
 import { signIn } from "next-auth/react";
 import { toast } from "@/hooks/use-toast";
+import { Logo } from "@/components/Logo";
 
 export function AuthForm() {
    const form = useForm();
@@ -34,7 +35,7 @@ export function AuthForm() {
             <Card className="w-full max-w-md">
                <CardHeader>
                   <CardTitle className="text-2xl flex justify-center items-center font-bold tracking-tighter">
-                     Gestão<span className="text-primary">Bela</span>
+                     <Logo />
                   </CardTitle>
 
                </CardHeader>
