@@ -34,7 +34,7 @@ export function AuthForm() {
             <Card className="w-full max-w-md">
                <CardHeader>
                   <CardTitle className="text-2xl flex justify-center items-center font-bold tracking-tighter">
-                     GestãoBela
+                     Gestão<span className="text-primary">Bela</span>
                   </CardTitle>
 
                </CardHeader>
@@ -43,10 +43,6 @@ export function AuthForm() {
                      <div>
                         <Label htmlFor="email">E-mail</Label>
                         <Input id="email" placeholder="gestaobela@gmail.com" type="email" {...form.register('email')} />
-                     </div>
-                     <div className="mt-4">
-                        <Label htmlFor="password">Senha</Label>
-                        <Input id="password" placeholder="Sua senha" type="password" />
                      </div>
                      <Button className="mt-6 w-full" type="submit">Entrar</Button>
                      <div className="flex justify-center items-center gap-6 mt-4">
