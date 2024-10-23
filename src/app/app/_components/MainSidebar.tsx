@@ -1,7 +1,7 @@
 'use client'
 
 import { Sidebar, SidebarFooter, SidebarHeader, SidebarMain, SidebarNav, SidebarNavHeader, SidebarNavHeaderTitle, SidebarNavLink, SidebarNavMain } from "@/components/layout/Sidebar";
-import { BeakerIcon, CalendarDaysIcon, Cog8ToothIcon, ComputerDesktopIcon, CubeTransparentIcon, CurrencyDollarIcon, LinkIcon, ShoppingBagIcon, ShoppingCartIcon, Squares2X2Icon, UserGroupIcon } from "@heroicons/react/24/outline";
+import { BeakerIcon, CalendarDaysIcon, Cog8ToothIcon, ComputerDesktopIcon, CubeTransparentIcon, CurrencyDollarIcon, LinkIcon, ShoppingBagIcon, ShoppingCartIcon, Squares2X2Icon, UserGroupIcon, UsersIcon } from "@heroicons/react/24/outline";
 import { usePathname } from "next/navigation";
 import { UserDropdown } from "./UserDropdown";
 import { Logo } from "@/components/Logo";
@@ -45,6 +45,10 @@ export function MainSidebar({ user }: Props) {
                         <SidebarNavLink href="/app/products" active={isActive('/app/products')}>
                             <BeakerIcon className="w-5 h-5 mr-3" />
                             Produtos
+                        </SidebarNavLink>
+                        <SidebarNavLink href="/app/professionals" active={isActive('/app/professionals')}>
+                            <UsersIcon className="w-5 h-5 mr-3" />
+                            Profissionais
                         </SidebarNavLink>
                         <SidebarNavLink href="/app/clients" active={isActive('/app/clients')}>
                             <UserGroupIcon className="w-5 h-5 mr-3" />

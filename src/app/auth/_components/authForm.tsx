@@ -15,7 +15,7 @@ export function AuthForm() {
    const handleSubmit = form.handleSubmit(async (data) => {
       try {
          await signIn('nodemailer', { email: data.email, redirect: false, });
-         
+
          toast({
             title: 'Sucesso !',
             description: 'E-mail enviado, verifique sua caixa de mensagens.',
@@ -45,7 +45,9 @@ export function AuthForm() {
                         <Label htmlFor="email">E-mail</Label>
                         <Input id="email" placeholder="gestaobela@gmail.com" type="email" {...form.register('email')} />
                      </div>
-                     <Button className="mt-6 w-full" type="submit">Entrar</Button>
+                     <Button className="mt-6 w-full" type="submit" disabled={form.formState.isSubmitting}>
+                        {form.formState.isSubmitting ? 'Enviado...' : 'Entrar'}
+                     </Button>
                      <div className="flex justify-center items-center gap-6 mt-4">
                         <Separator />
                         <span className="text-xs text-muted-foreground">OU</span>
